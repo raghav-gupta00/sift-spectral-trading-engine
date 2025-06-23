@@ -37,3 +37,5 @@ Thumbs.db
 
 # Python notebooks (optional)
 *.ipynb_checkpoints
+
+data_output
