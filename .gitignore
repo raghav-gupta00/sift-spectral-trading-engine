@@ -1,0 +1,39 @@
+# C++ build artifacts
+build/
+*.o
+*.obj
+*.a
+*.so
+*.out
+*.exe
+*.log
+*.dll
+
+# CMake-generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Output/analysis data
+output/*.csv
+output/*.png
+*.npy
+*.pdf
+
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Python notebooks (optional)
+*.ipynb_checkpoints
