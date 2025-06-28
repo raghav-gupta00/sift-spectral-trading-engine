@@ -1,3 +1,6 @@
+//csv_writer.cpp
+//utility to write output to a csv file from a input vector
+
 #include<iostream>
 #include<vector>
 #include<string>

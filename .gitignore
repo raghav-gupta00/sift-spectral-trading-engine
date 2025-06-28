@@ -16,8 +16,8 @@ cmake_install.cmake
 Makefile
 
 # Output/analysis data
-output/*.csv
-output/*.png
+data_output/*.csv
+data_output/*.png
 *.npy
 *.pdf
 
@@ -38,4 +38,4 @@ Thumbs.db
 # Python notebooks (optional)
 *.ipynb_checkpoints
 
-data_output
+data/*.csv

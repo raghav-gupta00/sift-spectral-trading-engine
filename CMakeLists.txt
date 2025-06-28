@@ -1,18 +1,14 @@
-cmake_minimum_required(VERSION 3.14)
-project(SIFT)
+cmake_minimum_required(VERSION 3.10)
+project(sift)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Add the include directory
-include_directories(include)
+file(GLOB_RECURSE SOURCES src/*.cpp)
 
-# Add source files
-set(SOURCES
-    src/main.cpp
-    src/csv_reader.cpp
-    src/csv_writer.cpp
-    src/fft.cpp
-)
+#to include headers
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
-# Create the executable
 add_executable(sift ${SOURCES})
+
+# Link FFTW manually
+target_link_libraries(sift fftw3)
