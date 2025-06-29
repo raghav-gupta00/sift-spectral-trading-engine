@@ -10,8 +10,8 @@
 namespace sift {
 
   std::vector<double> zero_pad_to_pow2(std::vector<double>& signal){
-    int N = signal.size();
-    int next_pow2 = 1;
+    size_t N = signal.size();
+    size_t next_pow2 = 1;
 
     while(next_pow2 < N) next_pow2 *= 2;
 

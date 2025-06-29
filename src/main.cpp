@@ -4,6 +4,7 @@
 #include <sift/csv_reader.hpp>
 #include <sift/csv_writer.hpp>
 #include <sift/fft.hpp>
+#include <sift/spike_detector.hpp>
 
 
 int main(){
@@ -17,5 +18,7 @@ int main(){
 
     std::vector<double> spectrum = sift::fft_wrapper(returns_list);
 
-    sift::save_csv("../data_output/output_data.csv", spectrum);
+    std::vector<sift::SpikeData> spike_vector = sift::detect_spikes(spectrum,0.5);
+
+    sift::save_csv("../data_output/spikes.csv", spike_vector);
 }

@@ -38,4 +38,6 @@ Thumbs.db
 # Python notebooks (optional)
 *.ipynb_checkpoints
 
-data/*.csv
+data
+data_output
+docs.txt
