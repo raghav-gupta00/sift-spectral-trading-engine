@@ -5,7 +5,7 @@
 #include <sift/csv_writer.hpp>
 #include <sift/fft.hpp>
 #include <sift/spike_detector.hpp>
-
+#include <sift/analyse_spectral_drift.hpp>
 
 int main(){
     std::vector<double> price_list = sift::read_csv("../data/nvda_data.csv", 1);
@@ -16,9 +16,7 @@ int main(){
       returns_list.push_back(price_list[i] - price_list[i-1]);
     }
 
-    std::vector<double> spectrum = sift::fft_wrapper(returns_list);
+    std::vector<sift::DominantFrequency> spectral_drift_data = sift::analyse_spectral_drift(returns_list, 64, 32);
 
-    std::vector<sift::SpikeData> spike_vector = sift::detect_spikes(spectrum,0.5);
-
-    sift::save_csv("../data_output/spikes.csv", spike_vector);
+    sift::write_to_csv("../data_output/spectral_drift_data.csv", spectral_drift_data);
 }
