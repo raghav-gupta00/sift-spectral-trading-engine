@@ -6,4 +6,5 @@
 
 namespace sift {
     std::vector<double> read_csv(const std::string data_path, int col_index);
+    std::vector<std::pair<std::string,double>> read_csv(const std::string data_path, int time_index, int price_index);
 }
