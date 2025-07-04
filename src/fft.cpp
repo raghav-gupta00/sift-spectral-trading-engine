@@ -10,6 +10,8 @@
 
 namespace sift {
 
+
+  // cooley tukey algo prefers zero padded to nearest power of 2 for better performance
   std::vector<double> zero_pad_to_pow2(std::span<const double> signal) {
     size_t N = signal.size();
     size_t next_pow2 = 1;
@@ -20,6 +22,7 @@ namespace sift {
     return padded;
   }
 
+  // perform r2c fft
   std::vector<double> fft_wrapper(std::span<const double> signal) {
     std::vector<double> padded_signal = sift::zero_pad_to_pow2(signal);
     int N = padded_signal.size();

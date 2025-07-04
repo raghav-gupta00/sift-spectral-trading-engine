@@ -9,6 +9,7 @@
 
 namespace sift {
 
+  // detect top spikes that satisfy the threshold
   std::vector<sift::SpikeData> detect_spikes(std::vector<double>& spectrum, double threshold_ratio) {
     size_t N = spectrum.size();
     std::vector<sift::SpikeData> spike_vector;
@@ -25,6 +26,7 @@ namespace sift {
     return spike_vector;
   }
 
+  // overloaded to find top n spikes from the rolling window fft
   std::vector<sift::DominantFrequency> detect_spikes(
     std::vector<double>& spectrum,
     double threshold_ratio,

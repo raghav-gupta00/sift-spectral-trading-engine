@@ -10,10 +10,15 @@ namespace sift {
     size_t N = time_series.size();
     std::vector<DominantFrequency> spectral_drift_data;
 
+    // perform a rolling window fft on windows
     for (int i = 0; i <= static_cast<int>(N) - window; i += jump) {
+
       std::span<const double> chunk(time_series.begin() + i, window);
+
       std::vector<double> spectrum = fft_wrapper(chunk);
+
       auto spectral_drift_chunk = detect_spikes(spectrum, 0.5, 5, i);
+      
       spectral_drift_data.insert(spectral_drift_data.end(), spectral_drift_chunk.begin(), spectral_drift_chunk.end());
     }
 
